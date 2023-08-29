@@ -15,3 +15,11 @@ function countTime() {
     console.log(humanReadableTimestamp);  // Outputs: YYYY-MM-DD HH:MM:SS
     
 }
+
+// Stop the interval
+function stopChage() {
+    clearInterval(intervalID);
+}
+
+// Event listeners
+document.getElementById('cancel').addEventListener('click', stopChage);
