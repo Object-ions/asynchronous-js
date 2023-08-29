@@ -18,8 +18,8 @@
 
 let intervalID;
 
+// Start the interval
 function startChage() {
-    console.log('Starting interval');
     if (!intervalID) {
         intervalID = setInterval(changeColor, 1000);
     }
@@ -28,18 +28,14 @@ function startChage() {
 
 // Stop the interval
 function stopChage() {
-    console.log('Stopping interval');
     clearInterval(intervalID);
 }
 
 function changeColor() {
-    if (document.body.style.backgroundColor !== 'black') {
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
-    } else {
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-    }
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = `#${randomColor}`;
+    randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.color = `#${randomColor}`;
 }
 
 // Event listeners
